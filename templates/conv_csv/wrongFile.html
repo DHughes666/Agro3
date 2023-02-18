@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block title %}CSV to KML{% endblock %}
+
+{% block content %}
+    <div class="w-1/2 my-6 p-6 mx-auto bg-gray-100 rounded-xl">
+    <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+        Wrong file! ONLY csv files are allowed!
+      </h1>
+      
+
+    <div>
+       <h1> <a href="{% url 'core:shap' %}">Try Again</a></h1>
+    </div>
+    
+    </div>
+{% endblock %}

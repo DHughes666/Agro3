@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  app3:
+    build: .
+    command: python /Agro3/manage.py runserver 0.0.0.0:8000
+    #command: gunicorn unoProject.wsgi -b 0.0.0.0:8000
+    volumes:
+      - .:/Agro3
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+
+
+volumes:
+  postgres_data:

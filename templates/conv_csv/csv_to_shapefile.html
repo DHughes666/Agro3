@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% block title %}Convert CSV{% endblock %}
+
+{% block content %}
+    <div class="w-1/2 my-6 p-6 mx-auto bg-gray-100 rounded-xl">
+        <h1 class="mb-6 text-2xl">Upload CSV files for conversion</h1>
+    <form method="POST" enctype="multipart/form-data" class="form-horizontal mt-5">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="name" class="col-md-3 col-xs-12 control-label>File: </label>
+            <div class="col-md-8">
+                <input type="file" name="csv_file" id="csv_file" class="form-control">
+            </div>
+        </div>
+        <div class="mt-5 flex justify-center items-center">
+            <button type="submit" class="bg-teal-500 hover:bg-teal-700 text-white py-3 px-8 rounded-xl">
+              Submit
+            </button>
+        </div>
+                      
+    </form>
+    </div>
+{% endblock %}
